@@ -51,6 +51,10 @@ func (c *Container) Configuration() error {
 		fmt.Println(err)
 		return err
 	}
+	if err := c.Container.Provide(repository.NewAgentReportRepository); err != nil {
+		fmt.Println(err)
+		return err
+	}
 
 	return nil
 }
